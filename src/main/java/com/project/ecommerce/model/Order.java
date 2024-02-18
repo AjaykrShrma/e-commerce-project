@@ -43,11 +43,11 @@ public class Order {
 	private User user;
 	
 	@CreationTimestamp
-	@Column(name = "order_date")
+	@Column(name = "order_date", updatable = false)
 	private LocalDateTime orderDate;
 	
 	@UpdateTimestamp
-	@Column(name = "cancel_date")
+	@Column(name = "cancel_date", insertable=false)
 	private LocalDateTime cancelDate;
 	
 	@Column(name = "order_status")
