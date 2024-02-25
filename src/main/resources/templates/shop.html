@@ -32,7 +32,7 @@
 				<div class="product-image">
 					<a th:href="@{/singleProduct/{productId} (productId=*{item.productId})}">
 					<img th:src="*{item.productImage}"></a>
-				</div>
+						</div>
 				<div class="product-info">
 					<p class="product-name">
 						<a th:href="@{/singleProduct/{productId} (productId=*{item.productId})}"  th:text="*{item.productName}"></a>
@@ -45,7 +45,6 @@
 					</form>
 				</div>
 			</div>
-			
 		</div>
 	</div>
 

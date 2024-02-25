@@ -3,23 +3,26 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Header</title>
-<link rel="stylesheet" th:href="@{/css/header.css}">
-<link rel="stylesheet" th:href="@{/css/style.css}">
+<script src="https://kit.fontawesome.com/8755f6524d.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" th:href="@{/css/header.css}" />
+<link rel="stylesheet" th:href="@{/css/style.css}" />
 </head>
 <body>
-<header >
-
+<header>
 	<div class="logo">
-		<h1>E-commerce</h1>
+		<h1>E-comm.</h1>
 	</div>
 	 <div class="navbar">
 		<ul>
      		<li><a th:href="@{/}">Home</a></li> 
 			<li><a th:href="@{/shop}">Shop</a></li> 
-			<li><a th:href="@{/userDashboard}" th:if="${session.userLoginData!=null}" 
-				   th:text="${session.userLoginData.userName}"></a></li>
-			<li><a th:href="@{/login}" th:if="${session.userLoginData==null}">Login</a></li>
-			<li><a th:href="@{/userLogout}" th:if="${session.userLoginData!=null}">Logout</a></li>
+			<li th:if="${session.userLoginData!=null}">
+				<a th:href="@{/userDashboard}" th:text="${session.userLoginData.userName}"></a>
+			</li>
+			<li>
+				<a th:href="@{/login}" th:if="${session.userLoginData==null}">Login</a>
+				<a th:href="@{/userLogout}" th:if="${session.userLoginData!=null}">Logout</a>
+			</li>
 			<li><a th:href="@{/cart}">Cart</a></li> 
 		</ul>
 	 </div>
